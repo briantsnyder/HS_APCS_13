@@ -1,20 +1,29 @@
-public class ShapesTester1
+import java.util.*;
+public class ShapesTester3
 {
-    public static void main (String []args)
+    public static void main(String []args)
     {
-        Rectangle1 one = new Rectangle1(2, 4);
-        Box1 two = new Box1(4,10,4);
+        Rectangle3 one = new Rectangle3(5, 20);
+        Rectangle3 two = new Box3(4, 10, 5);
 
-        // Test Rectangle class
-        System.out.println("The Rectangle:" );
-        System.out.println("    length is " + one.getLength());
-        System.out.println("    width is " + one.getWidth());
-        System.out.println();
+        //Print all shapes
+        ArrayList<Rectangle3> shapes = new ArrayList<Rectangle3>();
 
-        // Test Box class
-        System.out.println("The Box: ");
-        System.out.println("    length is " + two.getLength());
-        System.out.println("    width is " + two.getWidth());
-        System.out.println("    height is " + two.getHeight());
+        shapes.add( one );
+        shapes.add( two );
+
+        for(Rectangle3 rect: shapes)
+        {
+        	System.out.println(rect);
+        	showEffectBoth(rect);
+            System.out.println();
+        }
+        
     }
+
+    public static void showEffectBoth(Rectangle3 r)
+    {
+        System.out.println(r);
+    }
+
 }
