@@ -1,60 +1,53 @@
-public class Circle1
-{
+/**
+ * This class defines a Circle object.
+ *
+ * Brian Snyder
+ * 1/20/18
+ */
+
+public class Circle2 {
     // instance variables
     private int x;
     private int y;
     private int radius;
 
     // Constructor for objects of class Circle
-    public Circle1(int p_x, int p_y, int r)
-    {
+    public Circle2(int p_x, int p_y, int r) {
         // initialize instance variables
         x = p_x;
         y = p_y;
         radius = r;
     }
 
-    public int getRadius()
-    {
+    // getter method for name of shape
+    public String getName() {
+        return "Circle";
+    }
+    
+    // getter method for radius
+    public int getRadius() {
         return radius;
     }
 
     // Concatenates a String to show the center x, y point of the circle
-    public String getCenter()
-    {
+    public String getCenter() {
          return "center is at (" + x + ", " + y + ")";
     }
 }
 
-public class Oval1 extends Circle1
-{
-    // instance variables
-    private int radius2;
+/**
+ * This class defines a Cylinder object by extending a Circle.
+ *
+ * Brian Snyder
+ * 1/20/18
+ */
 
-    // Constructor for objects of class Oval
-    public Oval1(int x, int y, int rad1, int rad2)
-    {
-        // call superclass
-        super(x, y, rad1);
-
-        // initialize instance variables
-        radius2 = rad2;
-    }
-
-    public int getRadius2()
-    {
-        return radius2;
-    }
-}
-
-public class Cylinder1 extends Circle1
-{
+public class Cylinder2 extends Circle2 {
     // instance variables
     private int height;
 
     // Constructor for objects of class Cylinder
-    public Cylinder1(int x, int y, int rad, int h)
-    {
+    public Cylinder2(int x, int y, int rad, int h) {
         // call superclass
         super(x, y, rad);
 
@@ -62,20 +55,61 @@ public class Cylinder1 extends Circle1
         height = h;
     }
 
-    public int getHeight()
-    {
+    // getter method for name of shape
+    public String getName() {
+        return "Cylinder";
+    }
+    
+    // getter method for height of shape
+    public int getHeight() {
         return height;
     }
 }
 
-public class OvalCylinder1 extends Oval1
-{
+/**
+ * This class defines an Oval object by extending Circle.
+ *
+ * Brian Snyder
+ * 1/20/18
+ */
+
+public class Oval2 extends Circle2 {
+    // instance variables
+    private int radius2;
+
+    // Constructor for objects of class Oval
+    public Oval2(int x, int y, int rad1, int rad2) {
+        // call superclass
+        super(x, y, rad1);
+
+        // initialize instance variables
+        radius2 = rad2;
+    }
+
+    // getter method for name of shape
+    public String getName() {
+        return "Oval";
+    }
+    
+    // getter method for second radius
+    public int getRadius2() {
+        return radius2;
+    }
+}
+
+/**
+ * This class defines an Oval Cylinder object that extends an Oval.
+ *
+ * Brian Snyder
+ * 1/20/18
+ */
+
+public class OvalCylinder2 extends Oval2 {
     // instance variables
     private int height;
 
     // Constructor for objects of class OvalCylinder
-    public OvalCylinder1(int x, int y, int rad1, int rad2, int h)
-    {
+    public OvalCylinder2(int x, int y, int rad1, int rad2, int h) {
         // call superclass
         super(x, y, rad1, rad2);
 
@@ -83,8 +117,13 @@ public class OvalCylinder1 extends Oval1
         height = h;
     }
 
-    public int getHeight()
-    {
+    // getter method for name of shape
+    public String getName() {
+        return "Oval Cyinder";
+    }
+    
+    // getter method for height 
+    public int getHeight() {
         return height;
     }
 }
