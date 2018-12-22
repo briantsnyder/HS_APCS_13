@@ -1,0 +1,151 @@
+ /**
+ * This class defines a basic Terrain.
+ *
+ * Brian Snyder
+ * 1/20/18
+ */
+
+public class Terrain
+{
+    // instance variables
+    private int length, width;
+
+    // Constructor for objects of class Terrain
+    public Terrain(int l, int w)
+    {
+        // initialize instance variables
+        length = l;
+        width = w;
+    }
+
+    // getter method that returns dimensions of land
+    public String getTerrainSize()
+    {
+        return "Land has dimensions " + length + " X " + width;
+    }
+}
+
+/**
+ * This class defines a mountain terrain
+ *
+ * Brian Snyder
+ * 1/20/18
+ */
+public class Mountain extends Terrain {
+    // instance variables
+    private int myMountainNum;
+    
+    // Constructor for objects of class Mountain
+    public Mountain (int l, int w, int mountainNum) {
+        // inherits variables from Terrain class
+        super (l, w);
+        
+        // initialize instance variable
+        myMountainNum = mountainNum;
+    }
+    
+    // getter method that returns dimensiosn and # of mountains for Mountain Terrain
+    public String getMountainTerrain() {
+        return "Mountain " + getTerrainSize() + " and has " + myMountainNum + " mountains";
+    }
+}
+
+/**
+ * This class defines a desert terrain
+ *
+ * Brian Snyder
+ * 1/20/18
+ */
+public class Desert extends Terrain {
+    // instance variables
+    private int myCacti;
+    
+    // Constructor for objects of class Desert
+    public Desert(int l, int w, int cacti) {
+        // inherits variables from Terrain class
+        super(l ,w);
+        
+        // initialize instance variable
+        myCacti = cacti;
+    }
+    
+    // getter method that returns dimensions and # of cacti for Desert Terrain
+    public String getDesertTerrain() {
+        return "Desert " + getTerrainSize() + " and has " + myCacti + " cacti";
+    }
+}
+
+/**
+ * This class defines a forest terrain
+ *
+ * Brian Snyder
+ * 1/20/18
+ */
+public class Forest extends Terrain {
+    // instance variables
+    int myTreeNum;
+    
+    // Constructor for objects of class Forest
+    public Forest(int l, int w, int treeNum) {
+        // inherits variables from Terrain class
+        super(l, w);
+        
+        // initialize instance variable
+        myTreeNum = treeNum;
+    }
+    
+    // getter method that returns dimensions and # of trees for Forest Terrain
+    public String getForestTerrain() {
+        return "Forest " + getTerrainSize() + " and has " + myTreeNum + " trees";
+    }
+}
+
+/**
+ * This class defines a winter mountain terrain
+ *
+ * Brian Snyder
+ * 1/20/18
+ */
+public class WinterMountain extends Mountain {
+    // instance variables
+    private double myTemperature;
+    
+    // Constructor for objects of class WinterMountain
+    public WinterMountain (int l, int w, int numMountains, double temperature) {
+        // inherits variables from Mountian class
+        super (l, w, numMountains);
+        
+        // initialize instance variable
+        myTemperature = temperature;
+    }
+    
+    // getter method that returns dimensions, # of mountains, and temperature for Winter Mountian Terrain
+    public String getWinterMountainTerrain() {
+        return "Winter " + getMountainTerrain() + " and temperature " + myTemperature + " degrees";
+    }
+}
+
+/**
+ * This class defines a jungle terrrain
+ *
+ * Brian Snyder
+ * 1/20/18
+ */
+public class Rainforest extends Forest {
+    // instance variables
+    private double myPrecipitation;
+    
+    // Constructor for objects of class Rainforest
+    public Rainforest(int l, int w, int treeNum, double precipitationNum) {
+        // inherits variables from Forest class
+        super(l, w, treeNum);
+        
+        // initialize instance variable
+        myPrecipitation = precipitationNum;
+    }
+    
+    // getter method that returns dimensions, # of trees, and amount of precipitation for Rainforest Terrain
+    public String getRainforestTerrain() {
+        return "Rain " + getForestTerrain() + " and " + myPrecipitation + " inches of annual rainfall";
+    }
+}
