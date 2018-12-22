@@ -1,0 +1,53 @@
+/**
+ * This class demonstrates classes that override
+ * the toString method.
+ *
+ * Brian Snyder
+ * 1/21/18
+ */
+import java.util.ArrayList;
+public class ShapesTester4 {
+    public static void main(String args[] ) {
+        // initializes arrayList of objects
+        ArrayList<Rectangle4> shapes = new ArrayList<Rectangle4>();
+        
+        // initializes objects
+        Rectangle4 one = new Rectangle4(12, 20);
+        Rectangle4 two = new Box4(4, 4, 4);
+        Rectangle4 three = new Box4(4, 12, 8);
+        Rectangle4 four = new Cube4(4, 4, 4);
+        Rectangle4 five = new Square(2, 2);
+        Rectangle4 six = new Trapezoid(12, 10, 5);
+        
+        // adds objects to arrayList
+        shapes.add(one);
+        shapes.add(two);
+        shapes.add(three);
+        shapes.add(four);
+        shapes.add(five);
+        shapes.add(six);
+        
+        // Displays results
+        System.out.println("My Shapes: ");
+        System.out.println(" ");
+        
+        // Prints the dimensions of all the shapes within the arrayList
+        for(Rectangle4 rect: shapes) {
+            showEffectBoth(rect);
+        }
+        
+        // Prints equality results
+        System.out.println(" ");
+        System.out.println("Test for equality:");
+        System.out.println(" ");
+        
+        // Returns a boolean to say if two objects are equal or not
+        System.out.println("Object three and four are equal: " + three.equals(four));
+        System.out.println("Object two and four are equal: " + four.equals(two));
+    }
+    
+    public static void showEffectBoth(Rectangle4 r) {
+        // Employs the overriden toString method within each class
+        System.out.println(r);
+    }
+}
