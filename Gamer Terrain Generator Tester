@@ -1,0 +1,31 @@
+/**
+ * Tests the terrain class and its subclasses
+ *
+ * Brian Snyder
+ * 1/20/18
+ */
+public class GameTerrainTester {
+    public static void main (String args[]) {
+        // creates objects for each class
+        Terrain a = new Terrain(100, 100);
+        Mountain b = new Mountain(200, 200, 50);
+        WinterMountain c = new WinterMountain(150, 200, 25, 15.5);
+        Forest d = new Forest(300, 500, 600);
+        Desert e = new Desert(400, 350, 75);
+        Rainforest f = new Rainforest(700, 200, 500, 158.8);
+        
+        // displays information for each object
+        System.out.println(a.getTerrainSize() );
+        System.out.println("");
+        System.out.println(b.getMountainTerrain() );
+        System.out.println("");
+        System.out.println(c.getWinterMountainTerrain() );
+        System.out.println("");
+        System.out.println(d.getForestTerrain() );
+        System.out.println("");
+        System.out.println(e.getDesertTerrain() );
+        System.out.println("");
+        System.out.println(f.getRainforestTerrain() );
+        
+    }
+}
