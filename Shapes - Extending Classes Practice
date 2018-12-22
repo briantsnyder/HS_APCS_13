@@ -1,0 +1,146 @@
+/**
+ * This class defines a Rectangle object using
+ * length and width.
+ * The toString method has been added
+ *
+ * Brian Snyder
+ * 1/21/18
+ */
+public class Rectangle4 {
+    // instance variables 
+    private int length;
+    private int width;
+    
+    // Constructor for objects of class Rectangle4
+    public Rectangle4(int l, int w) {
+        // initializes instance variables
+        length = l;
+        width = w;
+    }
+    // return the height
+    public int getLength()
+    {
+        return length;
+    }
+
+    // return the width
+    public int getWidth()
+    {
+        return width;
+    }
+
+    // String to display when object is printed
+    public String toString()
+    {
+        return "Rectangle - " + length + " X " + width;
+    }
+}
+
+/**
+ * This class defines a Square object by extending rectangle
+ * The toString method has been added
+ *
+ * Brian Snyder
+ * 1/23/18
+ */
+public class Square extends Rectangle4 {
+    // Constructor for class Square
+    public Square(int l, int w) {
+        // inherits length and width from Rectangle4 class
+        super(l, w);
+    }
+    // String to display when object is printed.
+    public String toString() {
+        return "Square - " + getLength() + " X " + getWidth();
+    }
+}
+
+/**
+ * This class defines a Cube object by extending
+ * Box and length, width, and height are all the same
+ * The toString method has been added.
+ *
+ * Brian Snyder
+ * 1/21/18
+ */
+public class Cube4 extends Box4 {
+    // Constructor for class Cube4
+    public Cube4(int l, int w, int h) {
+        // inherits length, width, and height from Box4 class
+        super(l, w, h);
+    }
+    // String to display when object is printed.
+    public String toString() {
+        return "Cube - " + getLength() + " X " + getWidth() + " X " + getHeight();
+    }
+}
+
+/**
+ * This class defines a Trapezoid object by extending
+ * Rectangle (except length and width become the two bases)
+ * and including height
+ *
+ * Brian Snyder
+ * 1/25/18
+ */
+public class Trapezoid extends Rectangle4 {
+    // declares private instance variable
+    private int height;
+    // Constructor for class Trapezoid
+    public Trapezoid(int l, int w, int h) {
+        // inherits length and width from Rectangle4 class
+        // length and width are considered base one and base two in this case
+        super(l, w); 
+        height = h;
+    }
+    // String to display when object is printed.
+    public String toString() {
+        return "Trapezoid - " + getLength() + " X " + getWidth() + " X " + height;
+    }
+}
+
+/**
+ * This class defines a Box object by extending
+ * Rectangle and includes height.
+ * The toString method has been added.
+ *
+ * Brian Snyder
+ * 1/21/18
+ */
+public class Box4 extends Rectangle4 {
+    // instance variables
+    private int height;
+
+    // Constructor for objects of class Box4
+    public Box4(int l, int w, int h)
+    {
+        // call superclass
+        super(l, w);
+
+        // initialize instance variables
+        height = h;
+    }
+
+    // return the height
+    public int getHeight()
+    {
+        return height;
+    }
+
+    // String to display when object is printed.
+    public String toString()
+    {
+        return "Box - " + getLength() + " X " + getWidth() + " X " + height;
+    }
+    
+    // Overrides equals() method, replaced with testing if two objects are the exact same
+    public boolean equals(Object x) {
+        // if the length, width, and height of the objects are all the same, return true
+        // else return false
+        if ((getLength() == getWidth()) && (height == getLength())) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
